@@ -11,6 +11,7 @@
     tools:context=".HomeActivity">
 
     <Button
+        android:id="@+id/btnNewGame"
         android:fontFamily="@font/robotoblack"
         android:textColor="#ffffff"
         android:padding="10dp"
@@ -22,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
+        android:id="@+id/btnHistory"
         android:fontFamily="@font/robotoblack"
         android:textColor="#ffffff"
         android:background="@drawable/bg_button_corner"
