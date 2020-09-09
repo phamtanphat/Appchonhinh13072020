@@ -29,17 +29,18 @@ public class RandomActivity extends AppCompatActivity {
     private void startTime() {
         if (mTimer != null){
             mTimer.cancel();
-            mTimer = new CountDownTimer() {
-                @Override
-                public void onTick(long millisUntilFinished) {
-
-                }
-
-                @Override
-                public void onFinish() {
-
-                }
-            };
         }
+        mTimer = new CountDownTimer(AppConstant.TOTAL_TIME,AppConstant.COUNT_DOWN) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mBinding.tvTime.setText(String.format("Time : %ds",(millisUntilFinished / 1000) - 1));
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        mTimer.start();
     }
 }
