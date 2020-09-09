@@ -39,10 +39,16 @@ public class RandomActivity extends AppCompatActivity {
                 "drawable",
                 getPackageName());
         mBinding.imgRandom.setImageResource(mIdHinhRandom);
-        MyCountDown.startCountDown(new OnListenCountDown() {
+        MyCountDown.getInstance().startCountDown();
+        MyCountDown.getInstance().onListenTime(new OnListenCountDown() {
             @Override
             public void countDown(long time) {
                 mBinding.tvTime.setText(String.format("Time : %ds",time));
+            }
+
+            @Override
+            public void onFinish() {
+
             }
         });
     }

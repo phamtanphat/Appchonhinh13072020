@@ -3,24 +3,38 @@ package com.example.appchonhinh13072020;
 import android.os.CountDownTimer;
 
 public class MyCountDown {
-    public static CountDownTimer mCountDown = null;
+    private static MyCountDown myCountDown = null;
+    private CountDownTimer mCountDown = null;
+    private OnListenCountDown mOnListenCountDown = null;
 
-    public static void startCountDown(final OnListenCountDown onListenCountDown){
+    private MyCountDown(){
+
+    }
+    public static MyCountDown getInstance(){
+        if (myCountDown == null){
+            myCountDown = new MyCountDown();
+        }
+        return myCountDown;
+    }
+
+    public  void startCountDown(){
         if (mCountDown != null){
             mCountDown.cancel();
         }
         mCountDown = new CountDownTimer(AppConstant.TOTAL_TIME,AppConstant.COUNT_DOWN) {
             @Override
             public void onTick(long millisUntilFinished) {
-                onListenCountDown.countDown((millisUntilFinished / 1000) - 1);
+                mOnListenCountDown.countDown((millisUntilFinished / 1000) - 1);
             }
 
             @Override
             public void onFinish() {
-
+                mOnListenCountDown.onFinish();
             }
         };
         mCountDown.start();
     }
-
+    public void onListenTime(OnListenCountDown mOnListenCountDown){
+        this.mOnListenCountDown = mOnListenCountDown;
+    }
 }
