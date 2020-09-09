@@ -17,7 +17,7 @@ public class MyCountDown {
         return myCountDown;
     }
 
-    public  void startCountDown(){
+    public void startCountDown(){
         if (mCountDown != null){
             mCountDown.cancel();
         }
