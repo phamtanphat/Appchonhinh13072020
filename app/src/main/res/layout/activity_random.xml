@@ -13,7 +13,7 @@
         android:layout_marginTop="5dp"
         android:textColor="#f20"
         android:textSize="20sp"
-        android:text="Time : 0s"
+        tools:text="Time : 0s"
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -24,7 +24,7 @@
         android:layout_marginTop="5dp"
         android:textColor="#f20"
         android:textSize="20sp"
-        android:text="Score : 0"
+        tools:text="Score : 0"
         android:id="@+id/tvScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
